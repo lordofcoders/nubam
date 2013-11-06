@@ -1,0 +1,56 @@
+.header-search, .header-categories
+{
+    display: none;
+}
+
+.page-header
+{
+    padding:20px 0px 10px;
+    margin-top: 180px;
+}
+
+.admin-tab
+{
+    width: 1000px;
+    margin: 0px auto 0px;
+    position: relative;
+    top: 100px;
+    left: 100px;
+}
+
+#admin-login-panel
+{
+    width: 400px;
+    height: auto;
+    background: #f0f0f0;
+    margin: 0px auto;
+}
+
+#admin-top-panel
+{
+    width: 222px;
+    height: auto;
+    margin: 0px auto;
+    position: relative;
+    top: 25px;
+}
+
+#admin-left-panel
+{
+    width: 200px;
+    min-height: 200px;
+    position: fixed;
+    top: 160px;
+    left: 25px;
+    background: #fff;
+}
+
+#loadedView
+{
+}
+
+#loadedView .kba-table
+{
+    width: 968px;
+    height: auto;
+}

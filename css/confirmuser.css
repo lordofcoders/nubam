@@ -1,0 +1,14 @@
+.confirm-user-wrapper
+{
+    width: 285px;
+    height: auto;
+    margin: 200px auto;
+}
+
+.confirm-user
+{
+    height: 150px;
+    width: 275px;
+    background: #DDD3EB;
+    border: 5px solid #C9A6F5;
+}

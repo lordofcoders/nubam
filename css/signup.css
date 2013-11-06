@@ -1,0 +1,70 @@
+h1
+{
+    text-shadow: 1px 1px 1px #9A6AD6;
+    font-family: Verdana;
+    color: #C9A6F5;
+}
+
+select
+{
+    padding: 4px 0px;
+}
+
+.signup-wrapper
+{
+    width: 380px;
+    height: auto;
+    margin: 100px auto;
+}
+
+.signup
+{
+    
+    height: 300px;
+    width: 370px;
+    background: #DDD3EB;
+    border: 5px solid #C9A6F5;
+    margin-top: 5px;
+}
+
+.signup table
+{
+    margin: 10px auto;
+}
+
+.signup table tr td
+{
+    padding:10px 0px 0px;
+    position: relative;
+    color: #6f6f6f;
+    font-size: 14px;
+}
+
+
+.signup table input
+{
+    width: 215px;
+    margin-left: 5px;
+}
+
+.button-panel
+{
+    width: 350px;
+    padding: 15px 0px;
+    position:relative;
+    margin: 0px auto;
+}
+
+#goback-button
+{
+    position: absolute;
+    bottom:0px;
+    left:20px;
+}
+
+#signup-button
+{
+    position: absolute;
+    bottom:0px;
+    right:20px;
+}

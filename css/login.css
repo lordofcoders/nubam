@@ -1,0 +1,73 @@
+h1
+{
+    text-shadow: 1px 1px 1px #9A6AD6;
+    font-family: Verdana;
+    color: #C9A6F5;
+}
+
+.login-wrapper
+{
+    width: 285px;
+    height: auto;
+    margin: 200px auto;
+}
+
+.login
+{
+    
+    height: 150px;
+    width: 275px;
+    background: #DDD3EB;
+    border: 5px solid #C9A6F5;
+}
+
+.login table
+{
+    margin: 10px auto;
+}
+
+.login table tr td
+{
+    padding:10px 0px 0px;
+    position: relative;
+}
+
+.login table input
+{
+    width: 200px;
+    margin-left: 5px;
+}
+
+.button-panel
+{
+    width: 255px;
+    padding: 12px 0px;
+    position:relative;
+    margin: 0px auto;
+}
+
+#signup-button
+{
+    position: absolute;
+    bottom:0px;
+    left:20px;
+}
+
+#login-button
+{
+    position: absolute;
+    bottom:0px;
+    right:20px;
+}
+
+.icon
+{
+    color: #3F3F3F;
+    display: inline-block;
+    margin-left: -20px;
+}
+
+.key
+{
+    
+}

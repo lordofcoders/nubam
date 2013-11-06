@@ -1,0 +1,16 @@
+.today-wrapper
+{
+    width: 980px;
+    height: auto;
+    min-height: 400px;
+    margin: 0px auto;
+    margin-top: 50px;
+}
+
+.today
+{
+    width: 960px;
+    height: auto;
+    min-height: 380px;
+    padding: 10px;
+}
