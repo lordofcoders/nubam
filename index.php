@@ -38,7 +38,7 @@ $page = $eventManager->serve();
         <link rel="stylesheet" type="text/css" href="<?= EventManager::$base ?>css/opentip.css" media="all" />
         <link rel="stylesheet" type="text/css" href="<?= EventManager::$base ?>css/icons.css" media="all" />
         <link rel="stylesheet" type="text/css" href="<?= EventManager::$base ?>css/style.css" media="all" />
-        <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Sniglet:400,800|Architects+Daughter' rel='stylesheet' type='text/css'>
         <?php
             echo $eventManager->css;
         ?>
@@ -51,7 +51,20 @@ $page = $eventManager->serve();
                     <img src="<?= EventManager::$base ?>css/images/logo.jpg" />
                 </div>
                 <div id="header-menu">
-                    
+                    <ul>
+                        <li class="trans-all">
+                            <a href="<?= EventManager::$base ?>hakkimizda">Hakkimizda</a>
+                        </li>
+                        <li class="trans-all">
+                            <a href="<?= EventManager::$base ?>turk-genci-kimdir">Türk Genci Kimdir?</a>
+                        </li>
+                        <li class="trans-all">
+                            <a href="<?= EventManager::$base ?>calismalarimiz">Çalışmalarımız</a>
+                        </li>
+                        <li class="trans-all">
+                            <a href="<?= EventManager::$base ?>bir-derdim-var">Bir Derdim Var!</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <?php
