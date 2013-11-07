@@ -39,7 +39,7 @@ class EventManager
         {
             case '':
                 
-                self::goToLoc('home');
+                return $this->loadModule('Home');
                 
                 break;
             case 'home':

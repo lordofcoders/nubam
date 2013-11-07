@@ -690,6 +690,7 @@ transform:scale(.3)}
 #logo
 {
     float: left;
+    cursor: pointer;
 }
 
 #header-menu
@@ -722,19 +723,57 @@ transform:scale(.3)}
 #header-menu ul li a
 {
     font-family: Sniglet;
+    color: #96530b;
 }
+
+
 
 #header-menu ul li:hover
 {
-    text-shadow: 1px 1px 1px #7F7F7F;
+    text-shadow: 1px 1px 1px #5f5f5f;
+}
+
+#header-menu ul li:hover a[href="#hakkimizda"]
+{
+    color: #228BDD;
+}
+
+#header-menu ul li:hover a[href="#calismalarimiz"]
+{
+    color: #EFCD12;
+}
+
+#header-menu ul li:hover a[href="#turk-genci-kimdir"]
+{
+    color: #5CA12B;
+}
+
+#header-menu ul li:hover a[href="#bir-derdim-var"]
+{
+    color: #C5070A;
+}
+
+#content
+{
+    margin: 122px auto 0px;
 }
 
 .center
 {
-    margin: 122px auto 0px;
+    margin: 0px auto;
     position: relative;
     width: 1000px;
     padding: 12px;
+}
+
+.inner-center
+{
+    margin: 0px auto;
+    position: absolute;
+    width: 1000px;
+    display: none;
+    min-height: 100px;
+    top:12px;
 }
 
 

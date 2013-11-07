@@ -53,16 +53,16 @@ $page = $eventManager->serve();
                 <div id="header-menu">
                     <ul>
                         <li class="trans-all">
-                            <a href="<?= EventManager::$base ?>hakkimizda">Hakkimizda</a>
+                            <a href="#hakkimizda">Hakkimizda</a>
                         </li>
                         <li class="trans-all">
-                            <a href="<?= EventManager::$base ?>turk-genci-kimdir">Türk Genci Kimdir?</a>
+                            <a href="#turk-genci-kimdir">Türk Genci Kimdir?</a>
                         </li>
                         <li class="trans-all">
-                            <a href="<?= EventManager::$base ?>calismalarimiz">Çalışmalarımız</a>
+                            <a href="#calismalarimiz">Çalışmalarımız</a>
                         </li>
                         <li class="trans-all">
-                            <a href="<?= EventManager::$base ?>bir-derdim-var">Bir Derdim Var!</a>
+                            <a href="#bir-derdim-var">Bir Derdim Var!</a>
                         </li>
                     </ul>
                 </div>
