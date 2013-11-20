@@ -768,12 +768,10 @@ transform:scale(.3)}
 
 .inner-center
 {
-    margin: 0px auto;
-    position: absolute;
+    margin: 122px auto;
     width: 1000px;
-    display: none;
     min-height: 100px;
-    top:12px;
+    padding: 12px;
 }
 
 

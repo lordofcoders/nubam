@@ -47,19 +47,19 @@ class EventManager
                 return $this->loadModule('Home');
                 
                 break;
-            case 'login':
+            case 'hakkimizda':
                 
-                return $this->loadModule('Login');
-                
-                break;
-            case 'logout':
-                
-                return $this->loadModule('Logout');
+                return $this->loadModule('Hakkimizda');
                 
                 break;
-            case 'signup':
+            case 'turk-genci-kimdir':
                 
-                return $this->loadModule('Signup');
+                return $this->loadModule('TurkGenciKimdir');
+                
+                break;
+            case 'calismalarimiz':
+                
+                return $this->loadModule('Calismalarimiz');
                 
                 break;
             case 'confirm-user':
@@ -67,9 +67,9 @@ class EventManager
                 return $this->loadModule('ConfirmUser');
                 
                 break;
-            case 'admin':
+            case 'bir-derdim-var':
                 
-                return $this->loadModule('Admin');
+                return $this->loadModule('BirDerdimVar');
                 
                 break;
             case 'ajax':

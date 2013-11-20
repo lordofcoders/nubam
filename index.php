@@ -48,21 +48,21 @@ $page = $eventManager->serve();
         <div id="wrapper" class="">
             <div id="header">
                 <div id="logo">
-                    <img src="<?= EventManager::$base ?>css/images/logo.jpg" />
+                    <img src="<?= EventManager::url('css/images/logo.jpg') ?>" />
                 </div>
                 <div id="header-menu">
                     <ul>
                         <li class="trans-all">
-                            <a href="#hakkimizda">Hakkimizda</a>
+                            <a href="<?= EventManager::url('hakkimizda') ?>">Hakkimizda</a>
                         </li>
                         <li class="trans-all">
-                            <a href="#turk-genci-kimdir">Türk Genci Kimdir?</a>
+                            <a href="<?= EventManager::url('turk-genci-kimdir') ?>">Türk Genci Kimdir?</a>
                         </li>
                         <li class="trans-all">
-                            <a href="#calismalarimiz">Çalışmalarımız</a>
+                            <a href="<?= EventManager::url('calismalarimiz') ?>">Çalışmalarımız</a>
                         </li>
                         <li class="trans-all">
-                            <a href="#bir-derdim-var">Bir Derdim Var!</a>
+                            <a href="<?= EventManager::url('bir-derdim-var') ?>">Bir Derdim Var!</a>
                         </li>
                     </ul>
                 </div>
