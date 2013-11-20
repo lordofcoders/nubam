@@ -26,6 +26,13 @@ function __autoload($classname)
     }
 }
 
+function userExists()
+{
+    if(!isset($_SESSION['user']) || empty($_SESSION['user']))
+        return false;
+    else return true;
+}
+
 function jsConfig($key, $val) 
 {
     global $_jsConfig;

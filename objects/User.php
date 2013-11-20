@@ -3,14 +3,11 @@
 class User extends Object
 {
     public $id;
-    public $email;
+    public $userName;
     public $password;
-    public $firstName;
-    public $lastName;
-    public $joinedOn;
+    public $userType;
+    public $createdOn;
     public $lastLogin;
-    public $accountType;
-    public $avatar;
     
 }
 ?>

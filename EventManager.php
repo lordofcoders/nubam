@@ -72,6 +72,16 @@ class EventManager
                 return $this->loadModule('BirDerdimVar');
                 
                 break;
+            case 'admin':
+                
+                return $this->loadModule('Admin');
+                
+                break;
+            case 'logout':
+                
+                return $this->loadModule('Logout');
+                
+                break;
             case 'ajax':
                 
                 $this->ajax();
@@ -116,7 +126,7 @@ class EventManager
         switch(self::$params[1])
         {
             case 'authenticate':
-                $response = EventManager::login(self::$post['email'], self::$post['password']);
+                $response = EventManager::login(self::$post['userName'], self::$post['password']);
                 break;
             case 'signup':
                 $response = EventManager::signup(self::$post);
@@ -133,9 +143,9 @@ class EventManager
         return EventManager::$base . $fileURL;
     }
     
-    public static function login($email, $password)
+    public static function login($userName, $password)
     {
-        return self::$db->authenticateUser($email, sha1(md5($password . PASS_STRING)));
+        return self::$db->authenticateUser($userName, sha1(md5($password . PASS_STRING)));
     }
     
     public static function signup($nvp)

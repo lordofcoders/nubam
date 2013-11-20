@@ -81,7 +81,7 @@ class DBManager extends Module
         $vars = array();
         foreach($tableInfo as $field)
         {
-            $vars[] = $field[0];
+            $vars[] = $field['Field'];
         }
         
         
@@ -115,7 +115,7 @@ foreach($vars as $var)
         foreach ($params as $k => $v)
         {
             $i++;
-            $sql .= "$k = :$k";
+            $sql .= "$k = $k";
             if($i < $count)
             {
                 $sql .= ' AND ';
@@ -238,10 +238,10 @@ foreach($vars as $var)
             return false;
     }
     
-    public function authenticateUser($email, $pass)
+    public function authenticateUser($userName, $pass)
     {
         $response = array();
-        $params = array('email' => $email, 'password' => $pass);
+        $params = array('userName' => $userName, 'password' => $pass);
         $result = $this->select('User', $params);
         if($result)
         {
@@ -253,7 +253,7 @@ foreach($vars as $var)
         else
         {
             $response['status'] = false;
-            $response['message'] = 'E-mail ya da parola yanlis. Lutfen tekrar deneyin.';
+            $response['message'] = 'Kullanici adi veya parola yanlis. Lutfen tekrar deneyin.';
             return $response;
         }
     }
@@ -261,7 +261,7 @@ foreach($vars as $var)
     public function signup($nvp)
     {
         $response = array();
-        $params = array(':email' => $nvp['email']);
+        $params = array('userName' => $nvp['userName']);
         
         if($result = $this->select('User', $params))
         {
@@ -271,7 +271,6 @@ foreach($vars as $var)
         else
         {
             $nvp['password'] = sha1(md5($nvp['password'] . PASS_STRING));
-            $nvp['joinedOn'] = time();
             if($user = $this->insert('User', $nvp))
             {
                 $response['status'] = true;

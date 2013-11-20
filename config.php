@@ -7,8 +7,7 @@ define('DB_NAME', 'nunu', true);
 define('DB_PASSWORD', '', true);
 define('PASS_STRING', 'Osman Ozdemir is a fucking genius.');
 define('MANDRILL_API_KEY', 'e1XIGvOfJLxKK6ZN_loiUg');
-define('USER', 0);
-define('BIZ_OWNER', 1);
-define('ADMIN', 2);
+define('MODERATOR', 0);
+define('ADMIN', 1);
 $_jsConfig = array();
 ?>
