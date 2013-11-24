@@ -27,7 +27,6 @@ class Admin extends Module
         $this->addCSS('css/speech-bubbles.css');
         $this->addCSS('css/admin.css');
         $this->addJS('js/login.js');
-        $this->addJS('js/admin.js');
         return $this->createHTML();
     }
     

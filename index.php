@@ -8,7 +8,7 @@ session_start();
 include_once('util.php');
 
 $eventManager = new EventManager();
-//EventManager::$db->createObjectClassFromTable('User');
+//EventManager::$db->createObjectClassFromTable('Html');
 //$array = array(
 //    'userName' => 'osman',
 //    'password' => sha1(md5('osoz7162' . PASS_STRING)),
@@ -49,23 +49,27 @@ $page = $eventManager->serve();
         <div id="wrapper" class="">
             <div id="header">
                 <?php if(userExists()): ?>
-                <a class="white-gloss-button" id="logout-button" href="<?= EventManager::url('logout') ?>">Çıkış Yap</a>
+                <div class="admin-mini-panel">
+                    <a class="white-gloss-button" id="logout-button" href="<?= EventManager::url('logout') ?>"><span class="icon-exit"></span> Çıkış Yap</a>
+                    <a class="white-gloss-button" id="new-item-button"><span class="icon-plus"></span> Yeni</a>
+                </div>
+                
                 <?php endif; ?>
                 <div id="logo">
                     <img src="<?= EventManager::url('css/images/logo.jpg') ?>" />
                 </div>
                 <div id="header-menu">
                     <ul>
-                        <li class="trans-all">
+                        <li class="trans-all hakkimizda-link">
                             <a href="<?= EventManager::url('hakkimizda') ?>">Hakkimizda</a>
                         </li>
-                        <li class="trans-all">
+                        <li class="trans-all turk-genci-kimdir-link">
                             <a href="<?= EventManager::url('turk-genci-kimdir') ?>">Türk Genci Kimdir?</a>
                         </li>
-                        <li class="trans-all">
+                        <li class="trans-all calismalarimiz-link">
                             <a href="<?= EventManager::url('calismalarimiz') ?>">Çalışmalarımız</a>
                         </li>
-                        <li class="trans-all">
+                        <li class="trans-all bir-derdim-var-link">
                             <a href="<?= EventManager::url('bir-derdim-var') ?>">Bir Derdim Var!</a>
                         </li>
                     </ul>

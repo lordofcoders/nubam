@@ -35,6 +35,7 @@ class EventManager
     public function serve()
     {
         jsConfig('base', EventManager::$base);
+        
         switch(self::$params[0])
         {
             case '':
@@ -94,7 +95,14 @@ class EventManager
     public function loadModule($moduleName)
     {
         $module = new $moduleName();
-        
+        if(userExists())
+        {
+            $panel = new View('panels/panel.view.php');
+            $addNewItem = new View('panels/addNewItem.view.php');
+            jsConfig('panel', $panel->createHTML());
+            jsConfig('addNewItem', $addNewItem->createHTML());
+            $module->addJS('js/admin.js');
+        }
         $loaded =  $module->load();
         
         $this->addCSS($module->css);

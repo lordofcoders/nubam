@@ -626,6 +626,12 @@ transform:scale(.3)}
             0px 1px 0px rgba(255,255,255,1);
 }
 
+.white-gloss-button span
+{
+    position: relative;
+    top: 1px;
+}
+
 .white-gloss-button:active
 {
     cursor: pointer;
@@ -657,6 +663,75 @@ transform:scale(.3)}
             inset 0px 0px 2px rgba(255,255,255,1);
     text-shadow:
             0px 1px 0px rgba(255,255,255,1);
+}
+
+.window [class^='icon-']:hover
+{
+    text-shadow: 1px 1px 1px #5f5f5f;
+}
+
+.window
+{
+    position: fixed;
+    min-height: 40px;
+    margin: 0px auto;
+    display: none;
+    background: #F0F0F0;
+    z-index: 9999999;
+    -moz-box-shadow: 0px 1px 1px 1px #aaa;
+    -webkit-box-shadow: 0px 1px 1px 1px #AAA;
+    box-shadow: 0px 1px 1px 1px #AAA;
+    color: #4f4f4f;
+    text-shadow: 1px 1px 1px #C5C5C5;
+    max-width: 1000px;
+}
+
+.window.small
+{
+    width: 400px;
+}
+
+.window.medium
+{
+    width: 600px;
+}
+
+.window.large
+{
+	min-width: 800px;
+}
+
+.window .window-panel
+{
+    padding: 20px;
+    overflow-y : auto;
+    border-top: 1px solid #777;
+}
+
+.window .window-title
+{
+    text-align: center;
+    font-size: 16px;
+    height: 19px;
+    padding: 5px;
+    font-family: Sniglet;
+}
+
+#add-new-item ul
+{
+    list-style: none;
+    text-align: center;
+}
+
+#add-new-item ul li
+{
+    padding: 10px;
+    cursor: pointer;
+}
+
+#add-new-item ul li:hover
+{
+    background: #c5c5c5;
 }
 
 #wrapper
@@ -733,22 +808,22 @@ transform:scale(.3)}
     text-shadow: 1px 1px 1px #5f5f5f;
 }
 
-#header-menu ul li:hover a[href="#hakkimizda"]
+#header-menu ul li.hakkimizda-link:hover a
 {
     color: #228BDD;
 }
 
-#header-menu ul li:hover a[href="#calismalarimiz"]
+#header-menu ul li.turk-genci-kimdir-link:hover a
 {
     color: #EFCD12;
 }
 
-#header-menu ul li:hover a[href="#turk-genci-kimdir"]
+#header-menu ul li.calismalarimiz-link:hover a
 {
     color: #5CA12B;
 }
 
-#header-menu ul li:hover a[href="#bir-derdim-var"]
+#header-menu ul li.bir-derdim-var-link:hover a
 {
     color: #C5070A;
 }
@@ -758,11 +833,18 @@ transform:scale(.3)}
     margin: 122px auto 0px;
 }
 
-#logout-button
+
+.admin-mini-panel
 {
     position: absolute;
     top: 10px;
     right: 10px;
+}
+
+.admin-mini-panel .white-gloss-button
+{
+    float: right;
+    margin: 5px 0px 5px 5px;
 }
 
 .center
@@ -888,368 +970,5 @@ div[class^="icon-"]:hover
 .headers .table-header:hover + .table-header, .table-row .table-cell:hover + .table-cell
 {
     border-left: 1px solid transparent;
-}
-
-
-/* Smaller than standard 960 (devices and browsers) */
-/*@media only screen and (max-width: 959px) 
-{
-    .header-search input
-    {
-        width: 211px;
-        margin:10px;
-    }
-    
-    .left-side
-    {
-        z-index: -1;
-    }
-    
-    .header-search, .header-categories
-    {
-        z-index: 10;
-    }
-}*/
-
-/* Tablet Portrait size to standard 960 (devices and browsers) */
-/*@media only screen and (min-width: 768px) and (max-width: 959px) 
-{
-    .header-search input
-    {
-        width: 211px ;
-        margin:10px;
-    }
-    
-    .left-side
-    {
-        z-index: -1;
-    }
-    
-    .header-search, .header-categories
-    {
-        z-index: 10;
-    }
-}*/
-
-/* All Mobile Sizes (devices and browser) */
-/*@media only screen and (max-width: 767px) 
-{
-    .header-search input
-    {
-        margin:0px;
-    }
-    
-    .header-logo
-    {
-        margin: 0px auto;
-        height: 60px;
-        text-align: center;
-        width: 100%;
-    }
-    .header-search
-    {
-        width: 60px;
-        height: 60px;
-        float:left;
-    }
-    .header-categories
-    {
-        width: 60px;
-        height: 60px;
-        float: right;
-    }
-    
-    #category-dropdown
-    {
-        display: none;
-    }
-    
-    #categories-icon
-    {
-        display: block;
-    }
-        
-    #inner-wrapper
-    {
-        position:relative;
-    }
-    
-    #search-settings
-    {
-        position: absolute;
-        top: 60px;
-        width: 200px;
-        left: -200px;
-        background: url('images/white_carbon.png') repeat;
-        box-shadow: none;
-        display: none;
-        z-index: 1;
-    }
-    
-    #categories
-    {
-        position: absolute;
-        top: 60px;
-        width: 200px;
-        right: -200px;
-        background: url('images/white_carbon.png') repeat;
-        box-shadow: none;
-        display: none;
-        z-index: 1;
-    }
-    
-    .left-side
-    {
-        z-index: -1;
-    }
-    
-    .header-search, .header-categories
-    {
-        z-index: 10;
-    }
-}*/
-
-/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-/*@media only screen and (min-width: 480px) and (max-width: 767px) 
-{
-    .header-logo
-    {
-        margin: 0px auto;
-        height: 60px;
-        text-align: center;
-    }
-    .header-search
-    {
-        width: 60px;
-        height: 60px;
-        float:left;
-    }
-    .header-categories
-    {
-        width: 60px;
-        height: 60px;
-        float: right;
-    }
-    
-    #inner-wrapper
-    {
-        position:relative;
-    }
-    
-    #categories-icon
-    {
-        display: block;
-    }
-    
-    .header-search input, #category-dropdown
-    {
-        display: none;
-    }
-    
-    .header-search input
-    {
-        width: 0px;
-    }
-    
-    #search-settings
-    {
-        position: absolute;
-        top: 60px;
-        width: 200px;
-        left: -200px;
-        background: url('images/white_carbon.png') repeat;
-        box-shadow: none;
-        box-shadow: 1px 0px 2px #4F4F4F;
-        display: none;
-        z-index: 1;
-    }
-
-    #categories
-    {
-        position: absolute;
-        top: 60px;
-        width: 200px;
-        right: -200px;
-        background: url('images/white_carbon.png') repeat;
-        box-shadow: none;
-        box-shadow: -1px 0px 2px #4F4F4F;
-        display: none;
-        z-index: 1;
-    }
-    
-    .left-side
-    {
-        z-index: -1;
-    }
-    
-    .header-search, .header-categories
-    {
-        z-index: 10;
-    }
-}*/
-
-/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-/*@media only screen and (max-width: 479px) 
-{
-    .header-logo
-    {
-        margin: 0px auto;
-        height: 60px;
-        text-align: center;
-        font-size: 7px;
-    }
-    .header-search
-    {
-        width: 60px;
-        height: 60px;
-        float:left;
-    }
-    .header-categories
-    {
-        width: 60px;
-        height: 60px;
-        float: right;
-    }
-    
-    #inner-wrapper
-    {
-        position:relative;
-    }
-    
-    #categories-icon
-    {
-        display: block;
-    }
-    
-    .header-search input, #category-dropdown
-    {
-        display: none;
-    }
-    
-    .header-search input
-    {
-        width: 0px;
-    }
-    
-    #header h1
-    {
-        color: #FFF;
-        font-family: Shadows Into Light;
-        margin: 6px 0px;
-        height: 16px;
-        padding: 16px 5px;
-        line-height: 1em;
-    }
-    
-    #search-settings
-    {
-        position: absolute;
-        top: 60px;
-        width: 200px;
-        left: -200px;
-        background: url('images/white_carbon.png') repeat;
-        box-shadow: none;
-        display: none;
-    }
-
-    #categories
-    {
-        position: absolute;
-        top: 60px;
-        width: 200px;
-        right: -200px;
-        background: url('images/white_carbon.png') repeat;
-        box-shadow: none;
-        display: none;
-    }
-    
-    .left-side
-    {
-        z-index: -1;
-    }
-    
-    .header-search, .header-categories
-    {
-        z-index: 10;
-    }
-}*/
-
-.window
-{
-    width: 380px;
-    box-shadow: 0px 1px 2px #9f9f9f;
-    position: fixed;
-    background: #fff;
-}
-
-.window .window-header
-{
-    height: 24px;
-    width: 380px;
-}
-
-.close-window
-{
-    width: 16px;
-    height: 16px;
-    font-size: 16px;
-    color: #4f4f4f;
-    padding: 4px;
-    display: block;
-    float: right;
-}
-
-.close-window:hover
-{
-    text-shadow: 0px 1px 0px #4f4f4f;
-    color: #c5c5c5;
-}
-
-.close-window:active
-{
-    text-shadow: none;
-    color: #4f4f4f;
-}
-
-.window .window-header .mini-menu
-{
-    height: 24px;
-    width: 72px;
-    position: relative;
-    float:right;
-}
-
-.window .footer
-{
-    height: 24px;
-    width: 380px;
-}
-
-.outter
-{
-    width: 380px;
-    overflow: hidden;
-    border : none !important;
-    background: #fff;
-}
-
-.inner
-{
-    margin: 0px 24px;
-}
-
-.mini-menu
-{
-    cursor: pointer;
-}
-
-.window-title
-{
-    top: 5px;
-    left: 5px;
-    position: absolute;
-    color: #333;
-    font-size: 12px;
-    text-shadow: 0px 1px 0px #fff;
 }
 

@@ -1,12 +1,3 @@
-//    openNewWindow({
-//       width: 500,
-//       height: 500,
-//       headerHeight: 75,
-//       footerHeight: 50,
-//       closable: true,
-//       title: 'test window',
-//       content: 'content content content content content content content content content content'
-//    });
 var tz = jstz.determine();
 var timezone = tz.name();
 $(document).ready(function(){
@@ -76,3 +67,10 @@ $(window).resize(function(){
         });
     }
 });
+
+$(document).on('click', '.close-window', function(){
+    $(this).parenst('.window').fadeOut(function(){
+        $(this).remove();
+    })
+});
+

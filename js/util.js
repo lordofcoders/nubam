@@ -13,93 +13,43 @@ function scrollBarIsVisible()
     else return false;
 }
 
-function openNewWindow(options)
+function createNewWindow(options)
 {
-    if(!options)
+    $('body').append(KBA.panel)
+    var win = $('.window'); 
+    if(options.size)
+        win.addClass(options.size);
+    else
+        win.addClass('medium');
+    if(options.height)
     {
-        options = {
-            width : 380,
-            height: 380,
-            headerHeight: 40,
-            footerHeight: 40,
-            closable: true,
-            draggable: false,
-            scrollable: false,
-            title: '',
-            content: ''
-        }
+        $('.window-panel').css({
+            height: options.height
+        });
+    }
+        
+    if(options.title)
+    {
+        $('.window-title').text(options.title)
     }
     else
     {
-        if(!options.title)
-            options.title = '';
-        if(!options.content)
-            options.content = '';
-        if(!options.width)
-            options.width = 380;
-        if(!options.height)
-            options.height = 380;
-        if(!options.headerHeight)
-            options.headerHeight = 40;
-        if(!options.footerHeight)
-            options.footerHeight = 40;
-        if(!options.closable)
-            options.closable = true;
-        if(!options.draggable)
-            options.draggable = false;
-        if(!options.scrollable)
-            options.scrollable = false;
+        $('.window-title').text('');
     }
-    
-    var html = '';
-    
-    html += '<div class="window" style="display: none;">';
-    html += '<div class="window-header">';
-    html += '<div class="mini-menu">';
-    html += (options.title ? '<div class="window-title">' + options.title + '</div>' : '');
-    html += (options.closable ? '<a class="close-window icon-close trans-all"></a>' : '');
-    html += '</div>';
-    html += '</div>';
-    html += '<div class="outer" style="height:' + options.height + 'px;">';
-    html += '<div class="inner" style="height:' + options.height + 'px;width:' + (options.width - 48) + ';">';
-    html += options.content;
-    html += '</div>';
-    html += '</div>';
-    html += '<div class="footer"></div>';
-    html += '</div>';
-    
-    var win = $(html).appendTo('#wrapper');
-    
-    var left = ($(window).width() - $(win).width())/2 
-    var top = ($(window).height() - $(win).height())/2 
+    $('.window-panel', win).html(options.html);
     
     win.css({
-       left: left,
-       top: top
+        left: ($('body').innerWidth() - win.width())/2,
+        top: ($(window).height() - win.height())/2
     });
-    
-    win.fadeIn('fast');
-    
-    if(options.scrollable)
-        $('.outer').jScrollPane();
-    if(options.draggable)
-    {
-        $('.window').draggable({
-            containment: 'parent',
-            handle: '.mini-menu',
-            start : function(){
-                $('.mini-menu', $(this)).css({
-                    background: '#f0f0f0'
-                });
-            },
-            stop : function(){
-                $('.mini-menu', $(this)).css({
-                    background: '#d5d5d5'
-                });
-            }
-        });
-    }
-    
+    $('.window').fadeIn(150, function(){
+        
+    });
+}
+
+function closeAllWindows()
+{
+    $('.window').remove();
 }
 
 function validateEmail(mail)   
@@ -274,186 +224,4 @@ function remove_style(all) {
       is_hidden = false;
     }
   }
-}
-
-function updateColumn(data)
-{
-    for(var i=data.y+1; i<KBA.boxes[data.x].length; i++)
-    {
-        KBA.boxes[data.x][i].top += data.dif;
-        $('.biz-mini-box[x=' + data.x + '][y=' + i + ']').css({
-            top : '+=' + data.dif + 'px'
-        });
-    }
-}
-
-function getMore()
-{
-    
-//    $.post('post.php', {num : 15}, function(data){
-//        $('#wrapper').append(data);
-//        
-//        $('#wrapper').imagesLoaded(function(){
-//            layTheShitOutMothaFucka();
-//        });
-//        
-//    }, 'html');
-}
-
-function getShortestColumnHeight()
-{
-    var height = getColumnHeight(KBA.boxes[0]);
-    for(var i=1; i< KBA.boxes.length; i++)
-    {
-        var cHeight = getColumnHeight(KBA.boxes[i]);
-        if(cHeight < height)
-        {
-            height = cHeight;
-        }
-    }
-    
-    return height;
-}
-
-function getLongestColumnHeight()
-{
-    var height = getColumnHeight(KBA.boxes[0]);
-    for(var i=1; i< KBA.boxes.length; i++)
-    {
-        var cHeight = getColumnHeight(KBA.boxes[i]);
-        if(cHeight > height)
-        {
-            height = cHeight;
-        }
-    }
-    
-    return height;
-}
-
-function getColumnHeight(column)
-{
-    var height = column.length > 1 ? column[column.length - 1].top : column[0].top;
-    
-    return height;
-}
-
-function getAvailableSpot(boxes)
-{
-    var height = getColumnHeight(boxes[0]);
-    var result = {
-                x : 0,
-                y : boxes[0].length - 1,
-                height: height
-              };
-    for(var i=1; i< boxes.length; i++)
-    {
-        var cHeight = getColumnHeight(boxes[i]);
-        if(cHeight < height)
-        {
-            height = cHeight;
-            result = {
-                x : i,
-                y : boxes[i].length - 1,
-                height: height
-              };
-        }
-    }
-    
-    return result;
-}
-
-function appendBox(boxes, pos, bHeight)
-{
-    if(typeof(boxes[pos.x]) == 'undefined')
-    {
-        boxes[pos.x] = [];
-    }
-    
-    boxes[pos.x][pos.y + 1] = {
-        top : pos.height + bHeight + 14,
-        left : pos.x * 250
-    };
-    
-    return boxes[pos.x][pos.y];
-}
-
-function layTheShitOutMothaFucka()
-{
-    var contentWidth = ($(window).width() + (scrollBarIsVisible() ? 17 : 0)) - 500;
-    var cols = Math.floor(contentWidth / 250);
-    if(cols > 5)
-        cols = 5;
-    $('#content').width(cols * 250);
-        
-    
-    var i = 0;
-    for(i=0; i<cols; i++)
-    {
-        if(typeof(KBA.boxes[i]) == 'undefined')
-        {
-            KBA.boxes[i] = [];
-            KBA.boxes[i][0] = { top: 0, left : (i * 250) };
-        }
-        
-    }
-    
-    if(KBA.initialLength < cols)
-    {
-        for(i=0; i<Math.floor($('.biz-mini-box').length); i++)
-        {
-            j = i % KBA.initialLength;
-            var pos = getAvailableSpot(KBA.boxes);
-            var bHeight = $('.biz-mini-box[x="' + j + '"][y="' + (KBA.boxes[j].length-2) + '"]').height();
-            var p = appendBox(KBA.boxes, pos, bHeight);
-            $('.biz-mini-box[x="' + j + '"][y="' + (KBA.boxes[j].length-2) + '"]').css({
-                top : p.top,
-                left: p.left
-            }).attr('x', pos.x).attr('y', pos.y).attr('initHeight', bHeight);
-            
-            KBA.boxes[j].splice(-1,1);
-        }
-    }
-    
-    var remaining = [];
-    i = 0;
-    for(var j=KBA.initialLength-1; j>=cols; j--)
-    {
-        remaining[i] = j;
-        
-        KBA.boxes.splice(-1,1);
-        
-        i++;
-    }
-    
-    for(var i=0; i<remaining.length; i++)
-    {
-        $('.biz-mini-box[x="' + remaining[i] + '"]').each(function(){
-            var pos = getAvailableSpot(KBA.boxes);
-            var bHeight = $(this).height();
-            var p = appendBox(KBA.boxes, pos, bHeight);
-            $(this).css({
-                top : p.top,
-                left: p.left
-            }).attr('x', pos.x).attr('y', pos.y).attr('initHeight', bHeight);
-        });
-    }
-    
-    for(i = 0; i < $('.biz-mini-box').length; i++)
-    {
-        if(i >= KBA.count)
-        {
-            var pos = getAvailableSpot(KBA.boxes);
-            var bHeight = $($('.biz-mini-box')[i]).height();
-            var p = appendBox(KBA.boxes, pos, bHeight);
-            $($('.biz-mini-box')[i]).css({
-                top : p.top,
-                left: p.left
-            }).attr('x', pos.x).attr('y', pos.y).attr('initHeight', bHeight).fadeIn();
-            
-            KBA.count++;
-        }
-    }
-    KBA.initialLength = cols;
-    
-    $('#wrapper').height($(document).height());
 }

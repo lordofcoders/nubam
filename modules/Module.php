@@ -45,8 +45,15 @@ class Module
         $this->js .= '<script type="text/javascript" src="' . EventManager::$base . $js . '"></script>';
     }
     
-    public function createHTML()
+    public function createHTML($vars = null)
     {
-        return $this->view->createHTML($this->vars);
+        if(is_null($vars))
+        {
+            return $this->view->createHTML($this->vars);
+        }
+        else
+        {
+            return $this->view->createHTML($vars);
+        }
     }
 }

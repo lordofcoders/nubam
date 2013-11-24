@@ -16,9 +16,7 @@ class Home extends Module
         $this->setView($view);
         $this->addCSS('css/home.css');
         $this->addJS('js/greensock/minified/TimelineMax.min.js');
-        $this->addJS('js/greensock/minified/TweenMax.js');
-        $this->addJS('js/home.js');
-        $this->addJS('js/home.js');
+        $this->addJS('js/greensock/minified/TweenMax.min.js');
         $this->addJS('js/home.js');
         return $this->createHTML();
     }

@@ -1,3 +1,3 @@
-<div id="hakkimizda" class="inner-center">
-   hakkimizda
+<div id="hakkimizda" class="inner-center <?= $cls ?>">
+   
 </div>
