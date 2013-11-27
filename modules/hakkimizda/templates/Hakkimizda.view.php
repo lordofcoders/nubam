@@ -1,3 +1,3 @@
-<div id="hakkimizda" class="inner-center <?= $cls ?>">
+<div id="hakkimizda" class="page inner-center <?= $cls ?>" moduleID="<?= $moduleID ?>">
    
 </div>

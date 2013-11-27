@@ -734,6 +734,13 @@ transform:scale(.3)}
     background: #c5c5c5;
 }
 
+#add-new-item ul li [class^='icon-']
+{
+    position: relative;
+    top: 1px;
+    right: 10px;
+}
+
 #wrapper
 {
     overflow-x:hidden;
@@ -857,6 +864,7 @@ transform:scale(.3)}
 
 .inner-center
 {
+    position: relative;
     margin: 122px auto;
     width: 1000px;
     min-height: 100px;

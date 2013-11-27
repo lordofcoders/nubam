@@ -95,20 +95,17 @@ class EventManager
     public function loadModule($moduleName)
     {
         $module = new $moduleName();
+        self::$currentModule = $module;
         if(userExists())
-        {
-            $panel = new View('panels/panel.view.php');
-            $addNewItem = new View('panels/addNewItem.view.php');
-            jsConfig('panel', $panel->createHTML());
-            jsConfig('addNewItem', $addNewItem->createHTML());
-            $module->addJS('js/admin.js');
+        {   
+            self::addAdminStuff();
         }
         $loaded =  $module->load();
         
         $this->addCSS($module->css);
         $this->addJS($module->js);
         
-        self::$currentModule = $moduleName;
+        
         
         return $loaded;
     }
@@ -164,6 +161,17 @@ class EventManager
     public static function addItem($params)
     {
         
+    }
+    
+    public static function addAdminStuff()
+    {
+        self::$currentModule->addJS('js/admin.js');
+        $panel = new View('panels/panel.view.php');
+        $addNewItem = new View('panels/addNewItem.view.php');
+        $blockDetails = new View('panels/blockDetails.view.php');
+        jsConfig('panel', $panel->createHTML());
+        jsConfig('addNewItem', $addNewItem->createHTML());
+        jsConfig('blockDetails', $blockDetails->createHTML());
     }
 }
 

@@ -1,3 +1,2 @@
-<div id="turk-genci-kimdir" class="inner-center">
-   Turk genci kimdir
+<div id="turk-genci-kimdir" class="inner-center <?= $cls ?>" moduleID="3">
 </div>

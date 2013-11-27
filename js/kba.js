@@ -69,7 +69,7 @@ $(window).resize(function(){
 });
 
 $(document).on('click', '.close-window', function(){
-    $(this).parenst('.window').fadeOut(function(){
+    $(this).parents('.window').fadeOut(function(){
         $(this).remove();
     })
 });

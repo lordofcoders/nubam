@@ -215,6 +215,22 @@ foreach($vars as $var)
         }
     }
     
+    public function getModuleId($moduleName)
+    {
+        $params = array(':name' => $moduleName);
+        $sql = "SELECT * FROM Module WHERE name=name";
+        $statement = $this->db->prepare($sql);
+        $statement->setFetchMode(PDO::FETCH_ASSOC);  
+        $statement->execute($params);
+        
+        if($result = $statement->fetch())
+        {
+            return $result['id'];
+        }
+        
+        return false; 
+    }
+    
     public function getUserById($id)
     {
         $params = array(':id' => $id);

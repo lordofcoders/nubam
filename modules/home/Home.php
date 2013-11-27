@@ -14,6 +14,12 @@ class Home extends Module
     {
         $view = new View('home/templates/Home.view.php');
         $this->setView($view);
+        
+        if(userExists())
+            $this->setVar ('cls', 'editable');
+        else
+            $this->setVar ('cls', '');
+        
         $this->addCSS('css/home.css');
         $this->addJS('js/greensock/minified/TimelineMax.min.js');
         $this->addJS('js/greensock/minified/TweenMax.min.js');

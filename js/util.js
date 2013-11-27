@@ -42,6 +42,11 @@ function createNewWindow(options)
         left: ($('body').innerWidth() - win.width())/2,
         top: ($(window).height() - win.height())/2
     });
+    
+    if(options.callback && typeof (options.callback) == 'function')
+    {
+        options.callback.call();
+    }
     $('.window').fadeIn(150, function(){
         
     });
