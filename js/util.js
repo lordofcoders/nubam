@@ -15,6 +15,7 @@ function scrollBarIsVisible()
 
 function createNewWindow(options)
 {
+    $('.window').remove();
     $('body').append(KBA.panel)
     var win = $('.window'); 
     if(options.size)

@@ -36,7 +36,10 @@ select
     overflow: hidden;
 
 }
-
+ul
+{
+    list-style: none;
+}
 a
 {
     text-decoration: none;
@@ -719,7 +722,6 @@ transform:scale(.3)}
 
 #add-new-item ul
 {
-    list-style: none;
     text-align: center;
 }
 
@@ -739,6 +741,19 @@ transform:scale(.3)}
     position: relative;
     top: 1px;
     right: 10px;
+}
+
+#block-details ul li
+{
+    padding: 10px;
+    text-align: center;
+}
+
+#block-details ul li select
+{
+    width: 60px;
+    height: 40px;
+    font-size: 18px;
 }
 
 #wrapper

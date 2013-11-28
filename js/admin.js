@@ -13,7 +13,6 @@ $(window).resize(function(){
 });
 
 $(document).on('click', '#new-item-button', function(){
-    $('.window').remove();
     if($(this).parents('#header').length === 0)
     {
         
@@ -51,14 +50,43 @@ $(document).on('click', '#new-item-button', function(){
 
 $(document).on('click', '#add-new-item ul li', function(){
     var type = $(this).attr('add');
+    var parentType = $(this).attr('parenttype');
     switch(type)
     {
         case 'Block':
-            
+            if(parentType === 'Module')
+            {
+                createNewWindow({
+                    size: 'small',
+                    title: 'Yeni Blok',
+                    html : KBA.blockDetails
+                });
+            }
+            else
+            {
+                
+            }
             break;
         case 'Image':
             break;
         case 'Text':
             break;
     }
+});
+
+$(document).on('click', '.submit-form-button', function(){
+    var form = $(this).parents('form');
+    var params = form.serializeArray();
+    var action = form.attr('action');
+    
+    $.post(KBA.base + 'ajax/' + action , params, function(data){
+                if(data.status)
+                {
+                    success(data.message);
+                }
+                else
+                {
+                    error(data.message);
+                }
+            }, 'json');
 });
